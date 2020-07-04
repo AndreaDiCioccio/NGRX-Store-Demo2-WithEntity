@@ -6,6 +6,6 @@ export const getUsers = createAction(
 )
 
 export const addNewUser = createAction(
-    '[Home] Insert New User',
+    '[Home] Add New User',
     props< {user:User} >() 
 )
