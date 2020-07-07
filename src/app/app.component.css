@@ -15,6 +15,11 @@
     width: 100px;
 }
 
+
+.table, th, td{
+    border: 1px solid gray;
+}
+
 .btn{
     background-color: steelblue;
     border: 1px solid lightgrey;

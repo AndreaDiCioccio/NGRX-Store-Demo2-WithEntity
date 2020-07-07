@@ -1,4 +1,4 @@
-import { User, compareUsers } from '../interfaces'
+import { User, compareUsers } from './models'
 import { EntityState, createEntityAdapter } from '@ngrx/entity'
 import { on, createReducer } from '@ngrx/store'
 import { addNewUser } from './users.actions'

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
-import { User, AppState } from './interfaces';
+import { User, StoreState } from './ngrx/models';
 import { addNewUser } from './ngrx/users.actions';
 import { selectAllUsers } from './ngrx/users.selectors';
 
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit{
         age: new FormControl('')
     });
 
-    constructor(private store:Store<AppState>){}
+    constructor(private store:Store<StoreState>){}
 
     ngOnInit(){
         this.users$ = this.store.pipe(select(selectAllUsers))
@@ -38,7 +38,6 @@ export class AppComponent implements OnInit{
 
     insertNewUser(){
         this.user = {
-            id:Number(this.userForm.controls.id.value),
             rank:Number(this.uf.controls.rank.value),
             name:String(this.userForm.controls.name.value),
             surname:String(this.userForm.controls.surname.value),
