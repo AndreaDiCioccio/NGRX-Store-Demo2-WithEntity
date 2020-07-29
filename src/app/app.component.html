@@ -1,19 +1,17 @@
-<h1>NGRX Store Demo2 with Entity</h1>
+<h1>NGRX Entity Demo</h1>
 <h2>Insert new users</h2>
 <div class="form" [formGroup]="userForm">
-    <input type="number" class="text" formControlName="rank" placeholder="rank" required>
     <input type="text" class="text" formControlName="name" placeholder="name" required>
-    <input type="text" class="text" formControlName="surname" placeholder="surname" required>
     <input type="number" class="text" formControlName="age" placeholder="age" required>
     <button class="btn" (click)="insertNewUser()">Insert</button>
 </div>
 <h2>Selector:</h2>
-<p>Users are sorted by rank</p>
+<p>Users are sorted by age</p>
 <table>
     <tr>
-        <th>Name</th><th>Surname</th><th>Age</th><th>Rank</th>
+        <th>Name</th><th>Age</th>
     </tr>
     <tr *ngFor="let user of users$ | async">
-        <td>{{user.name}}</td><td>{{user.surname}}</td><td>{{user.age}}</td><td>{{user.rank}}</td>
+        <td>{{user.name}}</td><td>{{user.age}}</td>
     </tr>
 </table>

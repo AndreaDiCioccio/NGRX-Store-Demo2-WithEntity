@@ -5,7 +5,7 @@ import { addNewUser } from './users.actions'
 
 export const adapter = createEntityAdapter<User>({
     sortComparer:compareUsers,
-    selectId:user => user.rank
+    selectId:user => user.age
 })
 
 export const initialUsersState = adapter.getInitialState()

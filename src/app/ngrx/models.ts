@@ -1,16 +1,14 @@
 import { EntityState } from '@ngrx/entity';
 
 export interface User{
-    rank:number
     name:string
-    surname:string
     age:number
 }
 
 
 export function compareUsers(u1:User, u2:User){
 
-    const compare = u1.rank - u2.rank;
+    const compare = u1.age - u2.age;
 
     if (compare > 0) {
         return 1;

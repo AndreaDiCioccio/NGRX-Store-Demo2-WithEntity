@@ -19,10 +19,7 @@ export class AppComponent implements OnInit{
     user:User
 
     userForm = new FormGroup({
-        id: new FormControl(''),
-        rank: new FormControl(''),
         name: new FormControl(''),
-        surname: new FormControl(''),
         age: new FormControl('')
     });
 
@@ -38,9 +35,7 @@ export class AppComponent implements OnInit{
 
     insertNewUser(){
         this.user = {
-            rank:Number(this.uf.controls.rank.value),
             name:String(this.userForm.controls.name.value),
-            surname:String(this.userForm.controls.surname.value),
             age:Number(this.userForm.controls.age.value)
         }
 

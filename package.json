@@ -1,5 +1,5 @@
 {
-  "name": "ngrx-demo2-with-entity",
+  "name": "ngrx-entity-demo",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
