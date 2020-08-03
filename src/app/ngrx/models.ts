@@ -1,6 +1,7 @@
 import { EntityState } from '@ngrx/entity';
 
 export interface User{
+    id:number
     name:string
     age:number
 }
@@ -22,4 +23,4 @@ export interface StoreState{
     users:any
 }
 
-export interface UsersListState extends EntityState<User>{}
+export interface UsersState extends EntityState<User>{}

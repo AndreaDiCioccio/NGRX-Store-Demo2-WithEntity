@@ -35,6 +35,7 @@ export class AppComponent implements OnInit{
 
     insertNewUser(){
         this.user = {
+            id:Math.random() * 10,
             name:String(this.userForm.controls.name.value),
             age:Number(this.userForm.controls.age.value)
         }

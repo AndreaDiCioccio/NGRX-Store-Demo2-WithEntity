@@ -1,11 +1,10 @@
-import { User, compareUsers } from './models'
+import { User, compareUsers, UsersState } from './models'
 import { EntityState, createEntityAdapter } from '@ngrx/entity'
-import { on, createReducer } from '@ngrx/store'
+import { on, createReducer, State, Action } from '@ngrx/store'
 import { addNewUser } from './users.actions'
 
 export const adapter = createEntityAdapter<User>({
-    sortComparer:compareUsers,
-    selectId:user => user.age
+    sortComparer:compareUsers
 })
 
 export const initialUsersState = adapter.getInitialState()
@@ -16,3 +15,7 @@ export const usersReducer = createReducer(
 )
 
 export const {selectAll} = adapter.getSelectors()
+
+export function reducer(state: UsersState | undefined, action: Action) {
+    return usersReducer(state, action)
+}
