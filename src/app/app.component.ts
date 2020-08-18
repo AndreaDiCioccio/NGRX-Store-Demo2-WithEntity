@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
-import { User, StoreState } from './ngrx/models';
+import { StoreState } from './ngrx/models';
 import { addNewUser } from './ngrx/users.actions';
 import { selectAllUsers } from './ngrx/users.selectors';
+import { User } from './interfaces'
 
 @Component({
   selector: 'app-root',
@@ -35,7 +36,7 @@ export class AppComponent implements OnInit{
 
     insertNewUser(){
         this.user = {
-            id:Math.random() * 10,
+            id:Math.trunc(Math.random() * 1000),
             name:String(this.userForm.controls.name.value),
             age:Number(this.userForm.controls.age.value)
         }

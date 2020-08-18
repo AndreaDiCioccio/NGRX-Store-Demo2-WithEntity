@@ -1,11 +1,5 @@
 import { EntityState } from '@ngrx/entity';
-
-export interface User{
-    id:number
-    name:string
-    age:number
-}
-
+import { User } from '../interfaces'
 
 export function compareUsers(u1:User, u2:User){
 
@@ -20,7 +14,7 @@ export function compareUsers(u1:User, u2:User){
 }
 
 export interface StoreState{
-    users:any
+    users:UsersState
 }
 
 export interface UsersState extends EntityState<User>{}
