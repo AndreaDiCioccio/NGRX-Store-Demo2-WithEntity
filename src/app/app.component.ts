@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { StoreState } from './ngrx/models';
 import { addNewUser } from './ngrx/users.actions';
 import { selectAllUsers } from './ngrx/users.selectors';
@@ -20,8 +20,8 @@ export class AppComponent implements OnInit{
     user:User
 
     userForm = new FormGroup({
-        name: new FormControl(''),
-        age: new FormControl('')
+        name: new FormControl('', [Validators.required]),
+        age: new FormControl('', [Validators.min(1)])
     });
 
     constructor(private store:Store<StoreState>){}
